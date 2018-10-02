@@ -1,0 +1,38 @@
+{
+    "login": {
+        "title": "تسجيل الدخول",
+        "username": "اسم المستخدم",
+        "password": "كلمه السر",
+        "login": "تسجيل الدخول",
+        "logout": "تسجيل الخروج",
+        "profile": "الملف الشخصي"
+    },
+    "Welcome": {
+        "TITLE": "مرحبا بكم",
+        "SELECT": "اللغة"
+    },
+    "Header": {
+        "TITLE": "رأس الصفحة"
+    },
+    "Footer": {
+        "TITLE": "ذيل الصفحة"
+    },
+    "Despatch": {
+        "title": "ع Despatch Title",
+        "CDespatch": "صفحة الايفاد"
+    },
+    "inspection": {
+        "title": "ع inspection Title",
+        "Cinspection": "صفحة الفحص"
+    },
+    "payment": {
+        "title": "ع Payment Title",
+        "Cpayment": "صفحة الدفع"
+    },
+    "general": {
+        "Home-link": "الرئيسية",
+        "Despatch-link": "إيفاد",
+        "inspection-link": "فحص",
+        "payment-link": "دفع"
+    }
+}

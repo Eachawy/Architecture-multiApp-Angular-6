@@ -1,0 +1,24 @@
+    <div class="container" >
+        <div class="row">
+    
+            <div class="col s6 offset-s3 z-depth-1" id="panell">
+                <h5 id="title">{{ "login.title" | translate }}</h5>
+                <form>
+    
+                    <div class="input-field" id="username">
+                        <input type="text" class="validate">
+                        <label for="username">{{ "login.username" | translate }}</label>
+                    </div>
+                    <div class="input-field" id="password">
+                        <input type="password" class="validate">
+                        <label for="password">{{ "login.password" | translate }}</label>
+                    </div>
+                    <a class="login waves-effect waves-light btn" 
+                        (click)="go()">{{ "login.login" | translate }}</a>
+                     <!-- *permeationCode="['VTP_REQ_CREATE_11', 'VTP_REQ_CREATE_121']" -->
+                </form>
+    
+            </div>
+        </div>
+    
+    </div>

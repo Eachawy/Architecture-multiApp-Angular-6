@@ -1,0 +1,72 @@
+
+<!-- Dropdown Structure -->
+<!-- <div class="input-field col s12">
+    <select materialize="material_select">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+    </select>
+</div>
+ -->
+
+
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+
+
+
+
+            <li *ngFor="let item of navObj" routerLinkActive="active">
+                <ng-container *ngIf="item.child.length == 0">
+                    <a routerLink="/{{item.url}}" translate>general.{{ item.name }}-link</a>
+                </ng-container>
+                <ng-container *ngIf="item.child.length > 0">
+                    <a class="dropdown-trigger" href="#!" materialize="dropdown" attr.data-activates="{{item.name}}" translate>general.{{ item.name }}-link</a>
+                    <ul attr.id="{{item.name}}" class="dropdown-content">
+                        <li  *ngFor="let i of item.child">
+                            <a routerLink="{{i.url}}" translate>general.{{ i.name }}-link</a>
+                        </li>
+                    </ul>
+                </ng-container>
+            </li>
+
+
+
+            <!-- Dropdown Trigger -->
+            <li>
+                <a class="dropdown-trigger" href="#!" materialize="dropdown" data-activates="Language">Language
+                    <!-- <i class="material-icons right">arrow_drop_down</i> -->
+                </a>
+                <ul id="Language" class="dropdown-content">
+                    <li *ngFor="let language of languages">
+                        <a (click)="onChangeLanguage(language.type)">{{language.lang}}</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-trigger" href="#!" materialize="dropdown" data-activates="themes">Change Theme
+                    <!-- <i class="material-icons right">arrow_drop_down</i> -->
+                </a>
+                <ul id="themes" class="dropdown-content">
+                    <li *ngFor="let theme of themes">
+                        <a (click)="onChangeThemes(theme.name)">{{theme.name}}</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-trigger" href="#!" materialize="dropdown" data-activates="profile">{{ "login.profile" | translate }}
+                    <!-- <i class="material-icons right">arrow_drop_down</i> -->
+                </a>
+                <ul id="profile" class="dropdown-content">
+                    <li>
+                        <a (click)="onLogOut()">{{ "login.logout" | translate }}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

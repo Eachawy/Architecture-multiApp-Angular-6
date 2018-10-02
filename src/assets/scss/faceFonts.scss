@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Font1';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/Font1.eot'); /* For IE6-8 */
+    src: local('Font1'),
+         local('Font1'),
+         //url('./fonts/Font1.woff2') format('woff2'),
+         url('/assets/fonts/Font1.woff') format('woff'),
+         url('/assets/fonts/Font1.ttf') format('truetype');
+  }
+

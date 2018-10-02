@@ -1,0 +1,39 @@
+{
+    "login": {
+        "title": "Login Form",
+        "username": "UserName",
+        "password": "Password",
+        "login": "Login",
+        "logout": "Logout",
+        "profile": "Profile"
+    },
+    "Welcome": {
+        "TITLE": "Welcome",
+        "SELECT": "Change language"
+    },
+    "Header": {
+        "TITLE": "Header Component"
+    },
+    "Footer": {
+        "TITLE": "Footer Component"
+    },
+    "Despatch": {
+        "title":"Despatch Title",
+        "CDespatch":"Despatch page"
+
+    },
+    "inspection": {
+        "title":"inspection Title",
+        "Cinspection": "inspection page"
+    },
+    "payment": {
+        "title":"Payment Title",
+        "Cpayment": "payment page"
+    },
+    "general":{
+        "Home-link":"Home",
+        "Despatch-link":"Despatch",
+        "inspection-link": "inspection",
+        "payment-link": "payment"
+    }
+}

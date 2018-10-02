@@ -1,0 +1,38 @@
+{
+    "login": {
+        "title": "Formulaire de connexion",
+        "username": "Nom d'utilisateur",
+        "password": "Mot de passe",
+        "login": "S'identifier",
+        "logout": "Connectez - Out",
+        "profile": "Profil"
+    },
+    "Welcome": {
+        "TITLE": "Bonjour!",
+        "SELECT": "Changer la langue"
+    },
+    "Header": {
+        "TITLE": "Composant d'en-tête"
+    },
+    "Footer": {
+        "TITLE": "Composant pied de page"
+    },
+    "Despatch": {
+        "title":"Titre d'expédition",
+        "CDespatch": "Page d'expédition"
+    },
+    "inspection": {
+        "title":"Titre d'inspection",
+        "Cinspection": "page d'inspection"
+    },
+    "payment": {
+        "title":"Titre de paiement",
+        "Cpayment": "page de paiement"
+    },
+    "general": {
+        "Home-link": "Accueil",
+        "Despatch-link": "d'expédition",
+        "inspection-link": "d'inspection",
+        "payment-link": "paiement"
+    }
+}
