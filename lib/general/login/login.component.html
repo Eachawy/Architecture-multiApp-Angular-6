@@ -3,19 +3,20 @@
     
             <div class="col s6 offset-s3 z-depth-1" id="panell">
                 <h5 id="title">{{ "login.title" | translate }}</h5>
-                <form>
+                <form (ngSubmit)="login()">
     
                     <div class="input-field" id="username">
-                        <input type="text" class="validate">
+                        <input type="text" class="validate" id="username" name="username" [(ngModel)]="username">
                         <label for="username">{{ "login.username" | translate }}</label>
                     </div>
                     <div class="input-field" id="password">
-                        <input type="password" class="validate">
+                        <input type="password" class="validate" id="password" name="password" [(ngModel)]="password">
                         <label for="password">{{ "login.password" | translate }}</label>
                     </div>
-                    <a class="login waves-effect waves-light btn" 
-                        (click)="go()">{{ "login.login" | translate }}</a>
+                    <!-- <a class="login waves-effect waves-light btn" 
+                        (click)="go()">{{ "login.login" | translate }}</a> -->
                      <!-- *permeationCode="['VTP_REQ_CREATE_11', 'VTP_REQ_CREATE_121']" -->
+                     <button type="submit" class="waves-effect btn waves-light">{{ "login.login" | translate }}</button>
                 </form>
     
             </div>

@@ -65,11 +65,8 @@ export class NavbarComponent implements OnInit {
       this.renderer.addClass(document.body, theme);
     }
 
-    onLogOut (){
+    onLogOut () {
       this.LoginService.logout();
-      window.location.href = '/';
-      //this.router.navigate(['/']);
     }
-    
-
 }
+
