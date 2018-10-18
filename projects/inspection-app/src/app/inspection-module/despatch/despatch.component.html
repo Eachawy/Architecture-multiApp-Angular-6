@@ -1,3 +1,46 @@
 <p>
-    {{ "Despatch.CDespatch" | translate }} hello 45
+    {{ "Despatch.CDespatch" | translate }} hello 45   
 </p>
+
+
+
+
+<form [formGroup]="DespatchFG" (ngSubmit)="onSubmitFG()">
+    <div class="chassisNumberStyle">
+        <input type="text" formControlName="chassis-no-1">
+        <chassisNumber
+            formControlName="chassisNumber"
+            [type]="'text'"
+            [disabled]="false"
+            [id]="'idusername'"
+            [placeholder]="'Hello'"
+            [multiple]= "true"
+            (selected) = "chassNumberValue($event)">
+        </chassisNumber>
+        <hr>
+        <!-- <input-custom
+            formControlName="chassisNumber"
+            [type]="'text'"
+            [id]="'username'"
+            [placeholder]="'test place holder'">
+        </input-custom> -->
+        {{DespatchFG.get('chassisNumber').value}}
+    </div>
+    <button class="btn" type="submit"> Action </button>
+</form>
+
+<!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+    <input type="text" name="username" [(ngModel)]="username">
+    {{username}}
+    <chassisNumber
+        [(ngModel)]="username"
+        [type]="text"
+        [id]="idusername"
+        [ngModelOptions]="{standalone: true}"
+        [placeholder]="testplaceholder">
+    </chassisNumber>
+
+    <button class="btn" type="submit"> Action </button>
+
+</form> -->

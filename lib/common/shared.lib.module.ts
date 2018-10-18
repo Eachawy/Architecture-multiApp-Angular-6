@@ -1,7 +1,7 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { Ng2Webstorage } from 'ngx-webstorage';
@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 const primengRef = [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     AutoCompleteModule,
     MultiSelectModule,
     Ng2Webstorage,

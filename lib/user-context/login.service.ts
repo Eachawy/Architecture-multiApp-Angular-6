@@ -22,6 +22,7 @@ export class loginService {
         resolve(data);
       },
       err => {
+        debugger;
           this.logout();
           console.log('error');
           reject(err);

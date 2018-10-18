@@ -3,13 +3,13 @@ import { despatchComponent } from './despatch/despatch.component';
 import { paymentComponent } from './payment/payment.component';
 import { inspectionComponent } from './inspection/inspection.component';
 import { rootComponent } from './root';
-import { AuthguardGuard } from "../../../../../lib/common/auth/authguard.guard";
+import { AuthguardGuard } from '../../../../../lib/common/auth/authguard.guard';
 
 
 export const inspectionRoute: Routes = [
     {
         path: '',
-        canActivateChild: [AuthguardGuard],
+        //canActivateChild: [AuthguardGuard],
         component: rootComponent,
         // data: {
         //     breadcrumb: 'inspection'
@@ -20,8 +20,8 @@ export const inspectionRoute: Routes = [
                 component: despatchComponent,
                 data: {
                     authorities: [],
-                    pageTitle: "Despatch.title",
-                    breadcrumb: "Despatch"
+                    pageTitle: 'Despatch.title',
+                    breadcrumb: 'Despatch'
                 }
             },
             {
@@ -29,8 +29,8 @@ export const inspectionRoute: Routes = [
                 component: paymentComponent,
                 data: {
                     authorities: [],
-                    pageTitle: "payment.title",
-                    breadcrumb: "payment"
+                    pageTitle: 'payment.title',
+                    breadcrumb: 'payment'
                 }
             },
             {
@@ -38,8 +38,8 @@ export const inspectionRoute: Routes = [
                 component: inspectionComponent,
                 data: {
                     authorities: [],
-                    pageTitle: "inspection.title",
-                    breadcrumb: "inspection"
+                    pageTitle: 'inspection.title',
+                    breadcrumb: 'inspection'
                 }
             }
         ]

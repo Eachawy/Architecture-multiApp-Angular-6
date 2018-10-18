@@ -1,10 +1,10 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-import { noAccessComponent } from "../../../../lib/general/no_access/noAccess.component";
-import { notFoundPageComponent } from "../../../../lib/general/notFoundPage/notFoundPage.component";
+import { noAccessComponent } from '../../../../lib/general/no_access/noAccess.component';
+import { notFoundPageComponent } from '../../../../lib/general/notFoundPage/notFoundPage.component';
 
-import { AuthguardGuard } from "../../../../lib/common/auth/authguard.guard";
+import { AuthguardGuard } from '../../../../lib/common/auth/authguard.guard';
 
 
 
@@ -17,12 +17,12 @@ const applicationRout: Routes = [
     // },
     {
         path: '',
-        redirectTo:'welcome',
-        pathMatch:'full'
+        redirectTo: 'welcome',
+        pathMatch: 'full'
     },
     {
         path: 'welcome',
-        canActivate: [AuthguardGuard],
+        //canActivate: [AuthguardGuard],
         loadChildren: './welcome/welcome.module#CisWelcomeModule'
     },
     {
@@ -41,7 +41,6 @@ const applicationRout: Routes = [
         path: '**',
         component: notFoundPageComponent
     }
-
 ]
 
 @NgModule({
