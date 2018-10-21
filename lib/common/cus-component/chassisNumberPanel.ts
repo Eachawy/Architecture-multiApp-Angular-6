@@ -17,7 +17,7 @@ import * as $ from 'jquery';
     selector: 'chassisNumber',
     template: `
         <div  *ngIf="multiple" class="chassisNumberStyle">
-            <input type="text" maxlength="1" (input)="onKeydown($event)" tabIndex="1" [disabled]="disabled">
+            <input type="text" maxlength="17" (input)="onKeydown($event)" tabIndex="1" >
             <input type="text" maxlength="1" (input)="onKeydown($event)" tabIndex="2" [disabled]="disabled">
             <input type="text" maxlength="1" (input)="onKeydown($event)" tabIndex="3" [disabled]="disabled">
             <input type="text" maxlength="1" (input)="onKeydown($event)" tabIndex="4" [disabled]="disabled">
@@ -63,14 +63,14 @@ export class chassisNumberPanel implements OnInit, ControlValueAccessor {
     @Input() type: string;
     @Input() id: string;
     @Input() placeholder: string;
-    chassisNumber: string;
+    chassisNumber = '';
 
     @Input() multiple: Boolean;
     @Output() selected = new EventEmitter<string>();
     @Input() disabled: boolean;
 
 
-    // ------------------------------------------------
+    // ------------------------------------------------ Implementation Custom component
     constructor (private _renderer: Renderer2) {}
 
 
@@ -91,14 +91,20 @@ export class chassisNumberPanel implements OnInit, ControlValueAccessor {
 
 
 
-    ngOnInit () { }
+    ngOnInit () {
+
+
+
+
+     }
     onKeydown($event) {
-        if ($event.key === "backspace") {
-          console.log($event);
+        const pasteChassNumber = $('[tabindex="1"]').val().toString().replace(/\s/g, '');
+        if ( pasteChassNumber.length > 1 ) {
+            this.splitString (pasteChassNumber);
         } else {
-             if ($event.target.tabIndex < 17 ) {
+            if ($event.target.tabIndex < 17 ) {
                 $event.target.value = $event.target.value.toUpperCase();
-                $('[tabindex="' + ($event.target.tabIndex + 1) + '"]').focus();
+                $('[tabindex="' + ($event.target.tabIndex + 1) + '"]').prop('disabled', false).focus();
                 this.cubesData ();
             } else {
                 $event.target.value = $event.target.value.toUpperCase();
@@ -106,6 +112,22 @@ export class chassisNumberPanel implements OnInit, ControlValueAccessor {
                 this.cubesData ();
             }
         }
+    }
+    splitString (CNum) {
+        let CAV;
+        for (let i = 0; i < CNum.length; i++) {
+            CAV = CNum.charAt(i).toUpperCase();
+             if (CAV === '1' || CAV === 'I' || CAV === 'Q' || CAV === '0' || CAV === 'O' ) {
+                $('[tabindex="' + i + '"]').addClass('higlight');
+            } else {
+                $('[tabindex="' + i + '"]').removeClass('higlight');
+            }
+            this.chassisNumber += CAV;
+            $('[tabindex="' + (i + 1) + '"]').val(CAV);
+            $('[tabindex="' + (i + 1) + '"]').prop('disabled', false);
+        }
+        $('[tabindex="1"]').blur();
+        this.chassNumberValue();
     }
     cubesData () {
         this.chassisNumber = '';
